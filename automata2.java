@@ -23,10 +23,19 @@ public class automata2 {
             int r = dividend % divisor;
 
             if (r == 0) {
-                System.out.println(dividend + " = " + divisor + " (" + q + ")");
+                System.out.println(
+                    String.format("%,d", dividend) + " = " +
+                    String.format("%,d", divisor) + " (" +
+                    String.format("%,d", q) + ")"
+                );
                 gcd = divisor;
             } else {
-                System.out.println(dividend + " = " + divisor + " (" + q + ") + " + r);
+                System.out.println(
+                    String.format("%,d", dividend) + " = " +
+                    String.format("%,d", divisor) + " (" +
+                    String.format("%,d", q) + ") + " +
+                    String.format("%,d", r)
+                );
             }
 
             dividend = divisor;
@@ -35,9 +44,9 @@ public class automata2 {
 
         int lcm = (a * b) / gcd;
 
-        System.out.println("\nThe integers are " + a + " and " + b);
-        System.out.println("The greatest common divisor of " + a + " and " + b + " is " + gcd);
-        System.out.println("The least common multiple of " + a + " and " + b + " is " + lcm + ".");
+        System.out.println("\nThe integers are " + String.format("%,d", a) + " and " + String.format("%,d", b));
+        System.out.println("The GCD is " + String.format("%,d", gcd));
+        System.out.println("The LCM is " + String.format("%,d", lcm));
 
         scan.close();
     }
